@@ -1,4 +1,4 @@
-name: hubble pytest
+name: Fourier pytest
 
 on:
   push:
