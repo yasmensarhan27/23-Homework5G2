@@ -1,4 +1,4 @@
-name: Fourier pytest
+name: Fourier pytest 
 
 on:
   push:
