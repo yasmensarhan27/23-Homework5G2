@@ -2,9 +2,25 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load the data
+def load_data(url):
+    """
+    Load CO2 concentration data from a given URL.
+
+    Parameters:
+    - url (str): The URL pointing to the CO2 concentration data file.
+
+    Returns:
+    - pd.DataFrame: A DataFrame containing the loaded data.
+    """
+    # Load the data
+    df = pd.read_csv(url, delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
+    return df
+
+# URL for CO2 concentration data
 url = 'https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt'
-df = pd.read_csv(url, delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
+
+# Load data
+df = load_data(url)
 
 # Plot the raw data
 plt.figure(figsize=(12, 8))
