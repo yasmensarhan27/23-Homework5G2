@@ -1,14 +1,14 @@
-Fourier Transform:
+# Fourier Transform:
 
 Difference between FFT and DFT:
 The Fast Fourier Transform (FFT) is a mathematical algorithm that computes the Discrete Fourier Transform (DFT) of a sequence in a fast and efficient manner. 
 The DFT is a transformation that decomposes a sequence into its constituent frequencies. 
 
-Background
+## Background
 
 The DFT is defined as follows:
 
-$$ X[k] = Σ[n=0,N-1] x[n] * exp(-2πikn/N) $$
+$$ X[k] = \sigma[n=0,N-1] x[n] * exp(-2\{pi}ikn/N) $$
 where:
 
 X[k] is the kth Fourier coefficient
