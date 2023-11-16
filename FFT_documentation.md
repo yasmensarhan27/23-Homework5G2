@@ -8,7 +8,7 @@ The DFT is a transformation that decomposes a sequence into its constituent freq
 
 The DFT is defined as follows:
 
-$$X[k] = \sigma[n=0,N-1] x[n] * exp(-2\{pi}ikn/N)$$
+$$X[k] = \sigma[n=0,N-1] x[n] * exp(-2{\pi}ikn/N)$$
 where:
 
 X[k] is the kth Fourier coefficient
