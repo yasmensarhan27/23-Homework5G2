@@ -3,15 +3,17 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def find_peak_frequency(data):
-    # Pandas DataFrame with a column 'value' containing your data
+    # Assuming data is a pandas DataFrame with a column 'value' containing your data
+    #sample_spacing = 1
     values = data['value'].to_numpy()
 
     # Perform a Fast Fourier Transform (FFT) on the data
-    timestep = 1
+    timestep = 1 # Calculate the time step (assuming a regular monthly sampling)
     fft_result = np.fft.fft(values)
-    fft_freq = np.fft.fftfreq(len(fft_result),d= timestep)  # Frequency values corresponding to FFT result
+    fft_freq = np.fft.fftfreq(len(fft_result),d= timestep)  # Compute the corresponding frequencies in cycles per month
+    # Set a threshold to identify high-frequency components
     threshold = 0.01
-    fft_result_raw[np.abs(frequencies_per_month_raw) > threshold] = 0
+    fft_result_raw[np.abs(frequencies_per_month_raw) > threshold] = 0 # Zero out high-frequency components
     cleaned_data_raw = np.fft.ifft(fft_result_raw)
 
 
@@ -21,10 +23,10 @@ def find_peak_frequency(data):
 
     # Convert the peak frequency to useful units
 
-    cycles_per_season = peak_frequency
+    cycles_per_month = peak_frequency
     cycles_per_year = cycles_per_season * 12  # Assuming 12 months in a year
 
-    return cycles_per_year, cycles_per_season
+    return cycles_per_year, cycles_per_month
 
 
 data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_mid_surface-flask_1_ccgg_month.txt', delimiter='\s+', skiprows=54, names=['site', 'year', 'month', 'value'])
