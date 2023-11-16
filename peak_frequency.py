@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 def find_peak_frequency(data):
     # Assuming data is a pandas DataFrame with a column 'value' containing your data
-    #sample_spacing = 1
     values = data['value'].to_numpy()
 
     # Perform a Fast Fourier Transform (FFT) on the data
@@ -15,8 +14,6 @@ def find_peak_frequency(data):
     threshold = 0.01
     fft_result_raw[np.abs(frequencies_per_month_raw) > threshold] = 0 # Zero out high-frequency components
     cleaned_data_raw = np.fft.ifft(fft_result_raw)
-
-
     # Find the frequency component with the highest magnitude
     peak_frequency_index = np.argmax(np.abs(cleaned_data_raw))
     peak_frequency = np.abs(fft_freq[peak_frequency_index])
