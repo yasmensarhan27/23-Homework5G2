@@ -16,18 +16,18 @@ x[n] is the nth input sample
 N is the length of the input sequence
 The DFT can be computed directly using the above formula, but this is a computationally expensive process. The FFT is an algorithm that computes the DFT in a much more efficient manner.
 
-Algorithm
+## Algorithm
 
 The FFT is based on the Cooley-Tukey algorithm, which is a recursive algorithm that decomposes the DFT into a series of smaller DFTs. The Cooley-Tukey algorithm is based on the following identity:
 
-X[k] = X[k0] + W^N * X[k0 + N/2]
+$$X[k] = X[k0] + W^N * X[k0 + N/2]$$
 where:
 
 W is the complex exponential exp(-2πi/N)
 k0 is an integer between 0 and N/2
 The FFT algorithm uses this identity to recursively decompose the DFT into a series of smaller DFTs. The smaller DFTs are then computed using a direct implementation of the DFT formula.
 
-Applications
+## Applications
 
 The FFT is used in a wide variety of applications, including:
 
