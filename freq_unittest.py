@@ -6,7 +6,7 @@ from peak_frequency import find_peak_frequency
 class FindPeakFrequencyTest(unittest.TestCase):
     def test_find_peak_frequency_with_valid_data(self):
         # Create a sample dataset
-        data = pd.DataFrame({'year': np.linspace(1990, 2000, 100)
+        data = pd.DataFrame({'year': np.linspace(1990, 2000, 100),
                              'month': np.linspace(0, 1, 100),
                              'value': np.sin(2 * np.pi * 10 * np.linspace(0, 1, 100))})
         # Calculate the expected peak frequency
