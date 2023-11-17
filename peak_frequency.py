@@ -39,4 +39,4 @@ def find_peak_frequency(data):
     cycles_per_year = peak_frequency * 12  # Assuming 12 months in a year
     return cycles_per_year
     # print the frequency in reasonable unit
-print("Peak Frequency (Cycles per year):", cycles_per_year)
+    print("Peak Frequency (Cycles per year):", cycles_per_year)
