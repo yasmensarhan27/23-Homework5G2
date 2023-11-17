@@ -58,7 +58,7 @@ plt.ylabel('Amplitude')
 cleaned_data_raw = np.fft.ifft(fft_result_raw)
 # Plot the cleaned raw data with explicit time values on the x-axis
 plt.subplot(2, 1, 2)
-plt.plot(df['value'].index, cleaned_data_raw.real)
+plt.plot(df['value'][1:].index, cleaned_data_raw.real)
 plt.title('Cleaned Raw CO2 Monthly Average Data')
 plt.xlabel('Time (Months)')
 plt.ylabel('CO2 Concentration')
