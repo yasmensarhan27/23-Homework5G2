@@ -22,7 +22,7 @@ class FindPeakFrequencyTest(unittest.TestCase):
         # Create a sample dataset
         data = pd.DataFrame({'year': np.linspace(1990, 2000, 64),
                              'month': np.linspace(0, 1, 64),
-                             'value': np.sin(2 * np.pi * 10 * np.linspace(0, 1, 65))})
+                             'value': np.sin(2 * np.pi * 10 * np.linspace(0, 1, 64))})
         # Calculate the expected peak frequency
         expected_cycles_per_year = 3.0
         # Calculate the actual peak frequency
