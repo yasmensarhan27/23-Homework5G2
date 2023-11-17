@@ -5,9 +5,10 @@ This code will perform:
 (removes the first peak at zero to get some reasonable frequency of the data)
 2- choose the best peak for the frequency calculation
 """
+# import the necessary libraries to run the code
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #import data from the chosen noaa station
 data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt',
                    delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
