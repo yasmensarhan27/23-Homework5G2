@@ -32,7 +32,7 @@ class TestCO2Analysis(unittest.TestCase):
     @patch('pandas.read_csv', side_effect=pd.read_csv)
     def test_fft_and_frequency_analysis(self, mock_read_csv):
         # Test FFT and frequency analysis
-        mock_read_csv.return_value = pd.read_csv(pd.compat.StringIO(self.sample_data), delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
+        mock_read_csv.return_value = pd.read_csv(io.StringIO(self.sample_data), delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
         df = load_data(self.sample_url)
         fft_result_raw = np.fft.fft(df['value'])
         time_step = 1
