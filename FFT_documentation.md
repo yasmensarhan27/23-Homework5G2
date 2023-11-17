@@ -30,25 +30,20 @@ The FFT algorithm uses this identity to recursively decompose the DFT into a ser
 
 ## Applications [1](http://sar.kangwon.ac.kr/gisg/FFT_book.pdf)
 
+The FFT is a powerful algorithm that has a wide variety of applications. It is an essential tool for signal processing, image processing, and scientific computing.
+
 The FFT is used in a wide variety of applications, including:
 
 Signal processing: The FFT is used to analyze and process signals, such as audio and speech signals.
 Image processing: The FFT is used to analyze and process images, such as filtering and compressing images.
 Scientific computing: The FFT is used to solve a wide variety of scientific computing problems, such as solving differential equations and simulating physical systems.
-References
 
-Cooley, J. W., & Tukey, J. W. (1965). An algorithm for the machine calculation of complex Fourier transforms. SIAM Journal on Computing, 10(4), 621-632.
-
-Oppenheim, A. V., & Schafer, R. W. (1975). Discrete-time signal processing. Prentice-Hall.
-
-Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007). Numerical recipes in C: The art of scientific computing (3rd ed.). Cambridge University Press.
 
 Bibliography
 
-[1] Brigham, E. O. (1974). The fast Fourier transform. Prentice-Hall (http://sar.kangwon.ac.kr/gisg/FFT_book.pdf).
+[1] [Brigham, E. O. (1974). The fast Fourier transform. Prentice-Hall](http://sar.kangwon.ac.kr/gisg/FFT_book.pdf).
 
-[2] Fast Fourier Transform (https://mathworld.wolfram.com/FastFourierTransform.html)
+[2] [Fast Fourier Transform](https://mathworld.wolfram.com/FastFourierTransform.html)
 
-Rabiner, L. R., & Gold, B. (1975). Theory and application of digital signal processing. Prentice-Hall.
+[3] [Python Numerical Methods Chapter 24](https://pythonnumericalmethods.berkeley.edu/notebooks/chapter24.03-Fast-Fourier-Transform.html)
 
-The FFT is a powerful algorithm that has a wide variety of applications. It is an essential tool for signal processing, image processing, and scientific computing.
