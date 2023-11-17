@@ -2,6 +2,6 @@ pytest
 pylint
 numpy
 scipy
-pandas==0.24.0.
+pandas
 matplotlib
 io
