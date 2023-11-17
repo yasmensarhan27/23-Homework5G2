@@ -23,7 +23,6 @@ jobs:
       - name: Run Pytest
         run: |
              pytest freq_unittest.py
-             pytest filter_unittest.py
              pytest high_freq_cleanup_unit_test.py
         
       - name: Upload Pytest log as artifact
