@@ -32,8 +32,8 @@ def find_peak_frequency(data):
     # Set a threshold to identify high-frequency components
     threshold = 0.01
     for index, value in enumerate(fft_result):
-      if np.abs(fft_freq[index]) > threshold:
-        fft_result[index] = 0
+        if np.abs(fft_freq[index]) > threshold:
+            fft_result[index] = 0
     #fft_result[np.abs(fft_freq) > threshold] = 0  # Zero out high-frequency components
     cleaned_data = np.fft.ifft(fft_result)
     # Find the frequency component with the highest magnitude
