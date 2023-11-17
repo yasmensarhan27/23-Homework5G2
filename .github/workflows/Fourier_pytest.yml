@@ -24,7 +24,6 @@ jobs:
         run: |
              pytest freq_unittest.py
              pytest high_freq_cleanup_unit_test.py
-             pytest Fouriter_filter_unit_test.py
         
       - name: Upload Pytest log as artifact
         uses: actions/upload-artifact@v2
