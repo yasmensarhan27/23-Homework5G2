@@ -10,14 +10,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 def find_peak_frequency(data):
     """
-    Function takes a pandas DataFrame `data` containing a column named 'value' to represent a time series of measurements. 
+    Function takes a pandas DataFrame `data`
+    containing a column named 'value' to represent a time series of measurements. 
     Parameters:
     - data : pandas DataFrame
         Data containing date and values with date assigned in years and months.
     Returns:
     - cycles_per_year : float
         The estimated frequency in cycles per year.
-    """  
+    """
+    #import data from the chosen noaa station
+    data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt',
+                   delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
     values = data['value'].to_numpy()
     # Perform a Fast Fourier Transform (FFT) on the data
     timestep = 1  # Calculate the time step (assuming a regular monthly sampling)
@@ -34,9 +38,6 @@ def find_peak_frequency(data):
     # Convert the peak frequency to useful units
     cycles_per_year = peak_frequency * 12  # Assuming 12 months in a year
     return cycles_per_year
-    #import data from the chosen noaa station 
-data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt',
-                   delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
 #apply the find_frequency peak function to the data
 cycles_per_year = find_peak_frequency(data)
 # print the frequency in reasonable unit
