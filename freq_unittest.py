@@ -10,6 +10,10 @@ import pandas as pd
 import numpy as np
 from peak_frequency import find_peak_frequency
 class FindPeakFrequencyTest(unittest.TestCase):
+    """
+    This class contains 3 function
+    to test the main module peak_frequency.py
+    """
     def test_find_peak_frequency_with_valid_data(self):
         """
         test the sample data set
