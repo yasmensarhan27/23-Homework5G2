@@ -30,7 +30,7 @@ def find_peak_frequency(data):
     fft_freq = np.fft.fftfreq(len(fft_result), d=timestep)
     # Set a threshold to identify high-frequency components
     threshold = 0.01
-    fft_result[np.abs(fft_freq[:len(fft_result)]) > threshold] = 0  # Zero out high-frequency components
+    fft_result[np.abs(fft_freq) > threshold] = 0  # Zero out high-frequency components
     if len(fft_freq) != len(fft_result):
       raise ValueError("FFT frequency and result arrays must have the same length.")
     cleaned_data = np.fft.ifft(fft_result)
