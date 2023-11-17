@@ -8,7 +8,7 @@ from high_frequncy_cleanup import load_data
 class TestCO2Analysis(unittest.TestCase):
     def setUp(self):
         # Sample data for testing
-        #self.sample_url = 'https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt'
+        self.sample_url = 'https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt'
         self.sample_data = """site year month value
                               A    2022  1     400.0
                               A    2022  2     410.0
@@ -36,7 +36,7 @@ class TestCO2Analysis(unittest.TestCase):
         mock_read_csv.return_value = pd.read_csv(io.StringIO(self.sample_data),
                                                  delimiter="\s+", skiprows=54,
                                                  names=['site', 'year', 'month', 'value'])
-        df = load_data(self.sample_data)
+        df = load_data(self.sample_url)
         fft_result_raw = np.fft.fft(df['value'])
         time_step = 1
         frequencies_per_month_raw = np.fft.fftfreq(len(fft_result_raw), d=time_step)
