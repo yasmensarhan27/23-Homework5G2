@@ -8,7 +8,7 @@ The DFT is a transformation that decomposes a sequence into its constituent freq
 
 The DFT is defined as follows:
 
-$$X[k] = \sum_{n=0}^{N-1} x[n] * exp(-2{\pi}ikn/N)$$
+$$X[k] = \sum_{n=0}^{N-1} x[n] * exp(-2{\pi}ikn/N)$$ [1](http://sar.kangwon.ac.kr/gisg/FFT_book.pdf)
 where:
 
 X[k] is the kth Fourier coefficient
@@ -18,16 +18,17 @@ The DFT can be computed directly using the above formula, but this is a computat
 
 ## Algorithm
 
-The FFT is based on the Cooley-Tukey algorithm, which is a recursive algorithm that decomposes the DFT into a series of smaller DFTs. The Cooley-Tukey algorithm is based on the following identity:
+The FFT is based on the Cooley-Tukey algorithm[2](https://mathworld.wolfram.com/FastFourierTransform.html)
+, which is a recursive algorithm that decomposes the DFT into a series of smaller DFTs. The Cooley-Tukey algorithm is based on the following identity:
 
-$$X[k] = X[k0] + W^N * X[k0 + N/2]$$
+$$X[k] = X[k0] + W^N * X[k0 + N/2]$$ [1](http://sar.kangwon.ac.kr/gisg/FFT_book.pdf) 
 where:
 
 W is the complex exponential exp(-2πi/N)
 k0 is an integer between 0 and N/2
 The FFT algorithm uses this identity to recursively decompose the DFT into a series of smaller DFTs. The smaller DFTs are then computed using a direct implementation of the DFT formula.
 
-## Applications
+## Applications [1](http://sar.kangwon.ac.kr/gisg/FFT_book.pdf)
 
 The FFT is used in a wide variety of applications, including:
 
@@ -44,9 +45,9 @@ Press, W. H., Teukolsky, S. A., Vetterling, W. T., & Flannery, B. P. (2007). Num
 
 Bibliography
 
-Brigham, E. O. (1974). The fast Fourier transform. Prentice-Hall.
+[1] Brigham, E. O. (1974). The fast Fourier transform. Prentice-Hall (http://sar.kangwon.ac.kr/gisg/FFT_book.pdf).
 
-Elliot, D. F., & Rao, K. R. (2004). Fast Fourier transforms. Academic Press.
+[2] Fast Fourier Transform (https://mathworld.wolfram.com/FastFourierTransform.html)
 
 Rabiner, L. R., & Gold, B. (1975). Theory and application of digital signal processing. Prentice-Hall.
 
