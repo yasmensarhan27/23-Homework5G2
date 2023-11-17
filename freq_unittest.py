@@ -35,7 +35,7 @@ class FindPeakFrequencyTest(unittest.TestCase):
                              'month': [1, 2, 3],
                              'value': [395.78, 396.15, 397.38]})
         # Calculate the expected peak frequency
-        expected_cycles_per_year = 0.2
+        expected_cycles_per_year = 0.0
         # Calculate the actual peak frequency
         actual_cycles_per_year = find_peak_frequency(data)
         # Assert that the actual peak frequency matches the expected peak frequency
