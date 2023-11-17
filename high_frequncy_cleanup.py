@@ -28,7 +28,7 @@ df = load_data(url)
 # Plot the raw data
 plt.figure(figsize=(12, 8))
 plt.subplot(2, 1, 1)
-plt.plot(df['value'][1:])
+plt.plot(df['value'])
 plt.title('Raw CO2 Monthly Average Data')
 plt.xlabel('Time (Months)')
 plt.ylabel('CO2 Concentration')
