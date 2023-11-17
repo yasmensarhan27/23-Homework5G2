@@ -8,6 +8,9 @@ This code will perform:
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+#import data from the chosen noaa station
+data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt',
+                   delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
 def find_peak_frequency(data):
     """
     Function takes a pandas DataFrame `data`
@@ -19,9 +22,6 @@ def find_peak_frequency(data):
     - cycles_per_year : float
         The estimated frequency in cycles per year.
     """
-    #import data from the chosen noaa station
-    data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt',
-                   delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
     values = data['value'].to_numpy()
     # Perform a Fast Fourier Transform (FFT) on the data
     timestep = 1  # Calculate the time step (assuming a regular monthly sampling)
