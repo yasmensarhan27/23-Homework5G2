@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch, mock_open
 import pandas as pd
 import numpy as np
+import io
 import high_frequncy_cleanup
 
 class TestCO2Analysis(unittest.TestCase):
@@ -19,7 +20,7 @@ class TestCO2Analysis(unittest.TestCase):
     @patch('pandas.read_csv', side_effect=pd.read_csv)
     def test_load_data(self, mock_read_csv):
         # Test if data is loaded correctly
-        mock_read_csv.return_value = pd.read_csv(pd.compat.StringIO(self.sample_data), delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
+        mock_read_csv.return_value = pd.read_csv(io.StringIO(self.sample_data), delimiter="\s+", skiprows=54, names=['site', 'year', 'month', 'value'])
 
         df = load_data(self.sample_url)
 
