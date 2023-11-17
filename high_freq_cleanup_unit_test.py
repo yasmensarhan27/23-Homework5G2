@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch, mock_open
 import pandas as pd
 import numpy as np
+import high_frequncy_cleanup.py
 
 class TestCO2Analysis(unittest.TestCase):
     def setUp(self):
