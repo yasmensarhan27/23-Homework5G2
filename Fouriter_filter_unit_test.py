@@ -1,6 +1,7 @@
 import unittest
 import pandas as pd
 import numpy as np
+from high_frequncy_cleanup import load_data
 
 class TestCO2DataProcessing(unittest.TestCase):
 
