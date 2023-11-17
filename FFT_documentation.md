@@ -95,7 +95,9 @@ The cleaned raw data, obtained from the IFFT, is plotted as a time series with e
 ## Linting and Unit test:
 The Unit test successfully passed with some warnings.
 <img width="883" alt="Screen Shot 2023-11-17 at 4 29 02 AM" src="https://github.com/yasmensarhan27/23-Homework5G2/assets/38404107/e21b5edc-4fea-4152-bef7-1edc825ca237">
-The linting after fixing trials reached 8.69/10
+
+The linting after fixing trials reached 8.69/10:
+
 <img width="415" alt="Screen Shot 2023-11-17 at 4 43 13 AM" src="https://github.com/yasmensarhan27/23-Homework5G2/assets/38404107/2fbf1f50-da91-488e-894b-1fb8b76fe0d8">
 
 ## Bibliography
