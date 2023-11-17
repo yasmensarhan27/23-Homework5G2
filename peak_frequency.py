@@ -23,7 +23,7 @@ def find_peak_frequency(data):
     - cycles_per_year : float
         The estimated frequency in cycles per year.
     """
-    values = data['value'].to_numpy()
+    values = data['value'[1:]].to_numpy()
     # Perform a Fast Fourier Transform (FFT) on the data
     timestep = 1  # Calculate the time step (assuming a regular monthly sampling)
     fft_result = np.fft.fft(values)
