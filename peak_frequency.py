@@ -38,7 +38,7 @@ def find_peak_frequency(data):
     # Convert the peak frequency to useful units
     cycles_per_year = peak_frequency * 12  # Assuming 12 months in a year
     return cycles_per_year
-#apply the find_frequency peak function to the data
-cycles_per_year = find_peak_frequency(data)
-# print the frequency in reasonable unit
+    #apply the find_frequency peak function to the data
+    cycles_per_year = find_peak_frequency(data)
+    # print the frequency in reasonable unit
 print("Peak Frequency (Cycles per year):", cycles_per_year)
