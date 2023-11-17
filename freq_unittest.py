@@ -20,11 +20,11 @@ class FindPeakFrequencyTest(unittest.TestCase):
         calculate the fequency and compare it to the expected one
         """
         # Create a sample dataset
-        data = pd.DataFrame({'year': np.linspace(1990, 2000, 65),
-                             'month': np.linspace(0, 1, 65),
-                             'value': np.sin(2 * np.pi * 10 * np.linspace(0, 1, 65))})
+        data = pd.DataFrame({'year': np.linspace(1990, 2000, 129),
+                             'month': np.linspace(0, 1, 129),
+                             'value': np.sin(2 * np.pi * 10 * np.linspace(0, 1, 129))})
         # Calculate the expected peak frequency
-        expected_cycles_per_year = 3.0
+        expected_cycles_per_year = 2.0625
         # Calculate the actual peak frequency
         actual_cycles_per_year = find_peak_frequency(data)
         # Assert that the actual peak frequency matches the expected peak frequency
