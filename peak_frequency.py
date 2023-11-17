@@ -36,7 +36,7 @@ def find_peak_frequency(data):
     return cycles_per_year
 
 
-data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_mid_surface-flask_1_ccgg_month.txt',
+data = pd.read_csv('https://gml.noaa.gov/aftp/data/trace_gases/co2/flask/surface/txt/co2_avi_surface-flask_1_ccgg_month.txt',
                    delimiter='\s+', skiprows=54, names=['site', 'year', 'month', 'value'])
 cycles_per_year = find_peak_frequency(data)
 print("Peak Frequency (Cycles per year):", cycles_per_year)
