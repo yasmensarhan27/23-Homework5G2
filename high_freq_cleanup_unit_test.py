@@ -8,9 +8,9 @@ This code will test several processes:
 #import the nessecary libraried to run the code
 import unittest
 from unittest.mock import patch, mock_open
+import io
 import pandas as pd
 import numpy as np
-import io
 from high_frequncy_cleanup import load_data
 class TestCO2Analysis(unittest.TestCase):
     """
