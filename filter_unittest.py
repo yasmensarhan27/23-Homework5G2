@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
 from unittest.mock import patch
-import high_frequency_cleanup
+import high_frequncy_cleanup
 
 class TestLoadData(unittest.TestCase):
 
