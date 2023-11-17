@@ -28,12 +28,12 @@ df = load_data(url)
 # Plot the raw data
 plt.figure(figsize=(12, 8))
 plt.subplot(2, 1, 1)
-plt.plot(df['value'])
+plt.plot(df['value'][1:])
 plt.title('Raw CO2 Monthly Average Data')
 plt.xlabel('Time (Months)')
 plt.ylabel('CO2 Concentration')
 # Apply FFT to the raw data
-fft_result_raw = np.fft.fft(df['value'])
+fft_result_raw = np.fft.fft(df['value'][1:])
 # Calculate the time step (assuming a regular monthly sampling)
 time_step = 1  # If the data is monthly, the time step is 1 month
 # Compute the corresponding frequencies in cycles per month
