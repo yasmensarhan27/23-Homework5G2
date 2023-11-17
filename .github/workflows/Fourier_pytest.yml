@@ -19,7 +19,7 @@ jobs:
         run: |
              pip install --upgrade pip
              pip install -r requirements.txt
-             pip install pandas==1.5.3
+             pip install pandas==master
 
       - name: Run Pytest
         run: |
