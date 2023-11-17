@@ -2,7 +2,7 @@ import unittest
 import pandas as pd
 import numpy as np
 from unittest.mock import patch
-import find_peak_frequency
+import peak_frequency.py
 
 class FindPeakFrequencyTest(unittest.TestCase):
 
