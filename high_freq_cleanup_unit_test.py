@@ -35,8 +35,8 @@ class TestCO2Analysis(unittest.TestCase):
         2- the columns
         """
         # Test if data is loaded correctly
-        mock_read_csv.return_value = pd.read_csv(io.StringIO(self.sample_data), 
-                                                 delimiter="\s+", skiprows=54, 
+        mock_read_csv.return_value = pd.read_csv(io.StringIO(self.sample_data),
+                                                 delimiter="\s+", skiprows=54,
                                                  names=['site', 'year', 'month', 'value'])
         df = load_data(self.sample_url)
         self.assertIsInstance(df, pd.DataFrame)
@@ -44,7 +44,11 @@ class TestCO2Analysis(unittest.TestCase):
         self.assertListEqual(list(df.columns), ['site', 'year', 'month', 'value'])
     @patch('pandas.read_csv', side_effect=pd.read_csv)
     def test_fft_and_frequency_analysis(self, mock_read_csv):
-        # Test FFT and frequency analysis
+        """
+        Test FFT and frequency analysis
+        1- import the df
+        2- check the frequencies
+        """
         mock_read_csv.return_value = pd.read_csv(io.StringIO(self.sample_data),
                                                  delimiter="\s+", skiprows=54,
                                                  names=['site', 'year', 'month', 'value'])
@@ -57,7 +61,11 @@ class TestCO2Analysis(unittest.TestCase):
         self.assertIsInstance(frequencies_per_month_raw, np.ndarray)
         self.assertEqual(len(fft_result_raw), len(frequencies_per_month_raw))
     def test_high_frequency_component_removal(self):
-        # Test high-frequency component removal
+        """
+        this function is testing the filtering
+        if the absolute value offrequency is more than the thresold,
+        value will be added to the result list with index 0
+        """
         fft_result_raw = np.fft.fft([1, 2, 3, 4, 5])
         frequencies_per_month_raw = np.fft.fftfreq(len(fft_result_raw), d=1)
         threshold = 0.01
@@ -65,15 +73,17 @@ class TestCO2Analysis(unittest.TestCase):
         # Add assertions for high-frequency component removal
         self.assertTrue(np.all(fft_result_raw[np.abs(frequencies_per_month_raw) > threshold] == 0))
     def test_inverse_fft_and_cleaned_data_plotting(self):
-        
-        # Test inverse FFT and cleaned data plotting
+        """
+        Test inverse FFT and cleaned data plotting
+        it will take the cleaned data from the inverse fft of the results
+        check if the lenght of the cleaned data equals the results.
+        """
         fft_result_raw = np.fft.fft([1, 2, 3, 4, 5])
         time_step = 1
         frequencies_per_month_raw = np.fft.fftfreq(len(fft_result_raw), d=time_step)
         threshold = 0.01
         fft_result_raw[np.abs(frequencies_per_month_raw) > threshold] = 0
         cleaned_data_raw = np.fft.ifft(fft_result_raw)
-
         # Add assertions for inverse FFT and cleaned data plotting
         self.assertIsInstance(cleaned_data_raw, np.ndarray)
         self.assertEqual(len(cleaned_data_raw), len(fft_result_raw))
