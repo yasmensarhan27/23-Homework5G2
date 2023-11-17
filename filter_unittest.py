@@ -1,11 +1,12 @@
+"""
+This will perform the unittest by taking 2 senarios
+correct data and a fake data 
+"""
 import unittest
 import pandas as pd
 from unittest.mock import patch
 from high_frequncy_cleanup import load_data
-
 class TestLoadData(unittest.TestCase):
-
-    @patch('requests.get')
     def test_load_data_with_valid_url(self, mock_get):
         # Mock the response from the URL
         mock_get.return_value.status_code = 200
