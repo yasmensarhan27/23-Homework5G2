@@ -22,7 +22,7 @@ jobs:
              pip install -r requirements.txt  
 
       - name: Run Pylint
-        run: pylint **.py > pylint_output.log
+        run: pylint **.py
         
       - name: Upload Pylint log as artifact
         uses: actions/upload-artifact@v2
